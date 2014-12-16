@@ -10,6 +10,14 @@
 
 @interface ViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITextView *artist;
+@property (weak, nonatomic) IBOutlet UITextView *atitle;
+@property (weak, nonatomic) IBOutlet UITextView *date;
+@property (weak, nonatomic) IBOutlet UITextView *genre;
+@property (nonatomic, retain) NSString *mypath;
+@property (nonatomic, retain) NSMutableArray* albums;
+
+- (IBAction)buttonClicked:(id)sender;
 
 @end
 
