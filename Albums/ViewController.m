@@ -20,22 +20,30 @@
 
 
 - (IBAction)buttonClicked:(id)sender {
-    NSInteger index = 0;
-    self.artist.text = self.albums[index][@"artist"];
-    self.atitle.text = self.albums[index][@"title"];
-    self.date.text = self.albums[index][@"date"];
-    self.genre.text = self.albums[index][@"genre"];
+    NSInteger index = arc4random_uniform([_albums count]);
+    [self changeTrack:index];
+
+}
+
+
+- (IBAction)nextClicked:(id)sender {
+    NSInteger index = _currentTrack + 1 % [_albums count];
+    [self changeTrack:index];
+    
+}
+
+
+- (IBAction)prevClicked:(id)sender {
+    NSInteger index = _currentTrack - 1 % [_albums count];
+    [self changeTrack:index];
+    
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     _mypath = [[NSBundle mainBundle] pathForResource:@"albums" ofType:@"plist"];
     self.albums = [NSMutableArray arrayWithContentsOfFile: self.mypath];
-    NSInteger index = 0;
-    self.artist.text = self.albums[index][@"artist"];
-    self.atitle.text = self.albums[index][@"title"];
-    self.date.text = self.albums[index][@"date"];
-    self.genre.text = self.albums[index][@"genre"];
+    [self changeTrack:0];
     
     // Do any additional setup after loading the view, typically from a nib.
 }
@@ -43,6 +51,17 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)changeTrack:(NSInteger) index {
+    self.artist.text = self.albums[index][@"artist"];
+    self.atitle.text = self.albums[index][@"title"];
+    NSNumber* val = self.albums[index][@"date"];
+    self.date.text = [val stringValue];
+    self.genre.text = self.albums[index][@"genre"];
+    self.currentTrack = index;
+    self.currRecord.text = [NSString stringWithFormat:@"Record %d of %d", index, [_albums count] ];
+    
 }
 
 @end

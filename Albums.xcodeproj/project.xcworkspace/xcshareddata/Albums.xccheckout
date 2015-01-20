@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>58D88438-BF22-41FE-B22D-04CB27C34D9C</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Albums</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>FEA09E0842438AAC224B8451783E19A4DD26F0B0</key>
+		<string>https://github.com/trzeciakp/objc-lab.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Albums.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>FEA09E0842438AAC224B8451783E19A4DD26F0B0</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/trzeciakp/objc-lab.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>FEA09E0842438AAC224B8451783E19A4DD26F0B0</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>FEA09E0842438AAC224B8451783E19A4DD26F0B0</string>
+			<key>IDESourceControlWCCName</key>
+			<string>objc-lab</string>
+		</dict>
+	</array>
+</dict>
+</plist>
