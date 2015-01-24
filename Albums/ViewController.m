@@ -55,6 +55,16 @@
     }
 }
 
+-(void)filterGenre: (NSString*) selectedGenre {
+    if ([selectedGenre isEqual:@"Rock"]) {
+       // _albums =
+    } else if ([selectedGenre isEqual:@"Other"]) {
+        
+    } else {
+        
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     _mypath = [[NSBundle mainBundle] pathForResource:@"albums" ofType:@"plist"];
