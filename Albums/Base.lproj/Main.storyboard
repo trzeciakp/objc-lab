@@ -65,7 +65,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Xo-2Y-nTQ">
-                                <rect key="frame" x="222" y="352" width="32" height="30"/>
+                                <rect key="frame" x="273" y="352" width="32" height="30"/>
                                 <state key="normal" title="Next">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -89,12 +89,26 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uP9-Un-1hB">
-                                <rect key="frame" x="157" y="352" width="35" height="30"/>
-                                <state key="normal" title="Click">
+                                <rect key="frame" x="133" y="352" width="111" height="30"/>
+                                <state key="normal" title="I'm feeling lucky">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wGf-tZ-clo"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bpH-1w-PLF">
+                                <rect key="frame" x="55" y="55" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nVQ-Bm-usx">
+                                <rect key="frame" x="176" y="54" width="48" height="30"/>
+                                <state key="normal" title="Search">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="searchClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uoI-3E-J4z"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -108,6 +122,8 @@
                         <outlet property="genre" destination="lTh-hJ-QlB" id="wWa-eW-BMZ"/>
                         <outlet property="next" destination="8Xo-2Y-nTQ" id="XYY-ii-QAY"/>
                         <outlet property="prev" destination="0ZT-Xs-hoM" id="tVv-2x-c0i"/>
+                        <outlet property="search" destination="nVQ-Bm-usx" id="WZ4-Ib-XJg"/>
+                        <outlet property="searchInput" destination="bpH-1w-PLF" id="fTk-Nv-1AS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

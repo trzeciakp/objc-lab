@@ -17,12 +17,16 @@
 @property (nonatomic) NSInteger currentTrack;
 @property (nonatomic, retain) NSString *mypath;
 @property (nonatomic, retain) NSMutableArray* albums;
+@property (nonatomic, retain) NSMutableArray* allAlbums;
 
 - (IBAction)buttonClicked:(id)sender;
 - (IBAction)nextClicked:(id)sender;
 - (IBAction)prevClicked:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *next;
 @property (weak, nonatomic) IBOutlet UIButton *prev;
+@property (weak, nonatomic) IBOutlet UIButton *search;
+@property (weak, nonatomic) IBOutlet UITextField *searchInput;
+- (IBAction)searchClicked:(id)sender;
 
 @end
 

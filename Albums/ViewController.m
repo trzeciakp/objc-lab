@@ -39,10 +39,27 @@
     
 }
 
+-(IBAction)searchClicked:(id)sender {
+    [self filterArtists:_searchInput.text];
+}
+
+-(void)filterArtists: (NSString*) selectedArtist {
+    if ([selectedArtist isEqual:@""]) {
+        _albums = _allAlbums;
+        [self changeTrack:0];
+    } else {
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"artist contains %@", selectedArtist];
+        NSArray *selectedAlbums = [self.allAlbums filteredArrayUsingPredicate:predicate];
+        self.albums = selectedAlbums;
+        [self changeTrack:0];
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     _mypath = [[NSBundle mainBundle] pathForResource:@"albums" ofType:@"plist"];
     self.albums = [NSMutableArray arrayWithContentsOfFile: self.mypath];
+    self.allAlbums = [NSMutableArray arrayWithContentsOfFile: self.mypath];
     [self changeTrack:0];
     
     // Do any additional setup after loading the view, typically from a nib.
@@ -54,14 +71,22 @@
 }
 
 -(void)changeTrack:(NSInteger) index {
-    self.artist.text = self.albums[index][@"artist"];
-    self.atitle.text = self.albums[index][@"title"];
-    NSNumber* val = self.albums[index][@"date"];
-    self.date.text = [val stringValue];
-    self.genre.text = self.albums[index][@"genre"];
-    self.currentTrack = index;
-    self.currRecord.text = [NSString stringWithFormat:@"Record %ld of %ld", index + 1, [_albums count] ];
+    if ([self.albums count] == 0) {
+        self.artist.text = @"no record";
+        self.atitle.text = @"no record";
+        self.date.text = @"no record";
+        self.genre.text = @"no record";
+        self.currRecord.text = @"no record";
+        index = 0;
+    } else {
+        self.artist.text = self.albums[index][@"artist"];
+        self.atitle.text = self.albums[index][@"title"];
+        NSNumber* val = self.albums[index][@"date"];
+        self.date.text = [val stringValue];
+        self.genre.text = self.albums[index][@"genre"];
+        self.currentTrack = index;
+        self.currRecord.text = [NSString stringWithFormat:@"Record %ld of %ld", index + 1, [_albums count] ];
+    }
     
 }
-
 @end
