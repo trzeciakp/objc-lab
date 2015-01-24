@@ -27,14 +27,14 @@
 
 
 - (IBAction)nextClicked:(id)sender {
-    NSInteger index = _currentTrack + 1 % [_albums count];
+    NSInteger index = (_currentTrack + 1) % [_albums count];
     [self changeTrack:index];
     
 }
 
 
 - (IBAction)prevClicked:(id)sender {
-    NSInteger index = _currentTrack - 1 % [_albums count];
+    NSInteger index = (_currentTrack - 1) % [_albums count];
     [self changeTrack:index];
     
 }
@@ -60,7 +60,7 @@
     self.date.text = [val stringValue];
     self.genre.text = self.albums[index][@"genre"];
     self.currentTrack = index;
-    self.currRecord.text = [NSString stringWithFormat:@"Record %d of %d", index, [_albums count] ];
+    self.currRecord.text = [NSString stringWithFormat:@"Record %ld of %ld", index + 1, [_albums count] ];
     
 }
 
