@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC91B6F01A777B6D00F7F805 /* AlbumsUITableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC91B6EF1A777B6D00F7F805 /* AlbumsUITableViewController.m */; };
 		ACAA1B221A40194400DA3B32 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ACAA1B211A40194400DA3B32 /* main.m */; };
 		ACAA1B251A40194400DA3B32 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ACAA1B241A40194400DA3B32 /* AppDelegate.m */; };
 		ACAA1B281A40194400DA3B32 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACAA1B271A40194400DA3B32 /* ViewController.m */; };
@@ -28,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AC91B6EE1A777AFD00F7F805 /* AlbumsUITableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlbumsUITableViewController.h; sourceTree = SOURCE_ROOT; };
+		AC91B6EF1A777B6D00F7F805 /* AlbumsUITableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumsUITableViewController.m; sourceTree = "<group>"; };
 		ACAA1B1C1A40194400DA3B32 /* Albums.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Albums.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACAA1B201A40194400DA3B32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACAA1B211A40194400DA3B32 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -84,6 +87,8 @@
 		ACAA1B1E1A40194400DA3B32 /* Albums */ = {
 			isa = PBXGroup;
 			children = (
+				AC91B6EE1A777AFD00F7F805 /* AlbumsUITableViewController.h */,
+				AC91B6EF1A777B6D00F7F805 /* AlbumsUITableViewController.m */,
 				ACAA1B231A40194400DA3B32 /* AppDelegate.h */,
 				ACAA1B241A40194400DA3B32 /* AppDelegate.m */,
 				ACAA1B261A40194400DA3B32 /* ViewController.h */,
@@ -224,6 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACAA1B281A40194400DA3B32 /* ViewController.m in Sources */,
+				AC91B6F01A777B6D00F7F805 /* AlbumsUITableViewController.m in Sources */,
 				ACAA1B251A40194400DA3B32 /* AppDelegate.m in Sources */,
 				ACAA1B221A40194400DA3B32 /* main.m in Sources */,
 			);
@@ -418,6 +424,7 @@
 				ACAA1B411A40194400DA3B32 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ACAA1B421A40194400DA3B32 /* Build configuration list for PBXNativeTarget "AlbumsTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +433,7 @@
 				ACAA1B441A40194400DA3B32 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
