@@ -29,39 +29,45 @@
 - (IBAction)nextClicked:(id)sender {
     NSInteger index = (_currentTrack + 1) % [_albums count];
     [self changeTrack:index];
-    
+
 }
 
 
 - (IBAction)prevClicked:(id)sender {
     NSInteger index = (_currentTrack - 1) % [_albums count];
     [self changeTrack:index];
-    
+
 }
 
 -(IBAction)searchClicked:(id)sender {
-    [self filterArtists:_searchInput.text];
+    artistFilter = _searchInput.text;
+    [self filterAlbums];
+}
+
+-(void)filterAlbums {
+  _albums = _allAlbums;
+  [self filterArtists:_artistFilter];
+  [self filterGenre:_genreFilter];
+  [self changeTrack:0];
 }
 
 -(void)filterArtists: (NSString*) selectedArtist {
     if ([selectedArtist isEqual:@""]) {
         _albums = _allAlbums;
-        [self changeTrack:0];
     } else {
         NSPredicate *predicate = [NSPredicate predicateWithFormat:@"artist contains %@", selectedArtist];
         NSArray *selectedAlbums = [self.allAlbums filteredArrayUsingPredicate:predicate];
-        self.albums = selectedAlbums;
-        [self changeTrack:0];
+        _albums = selectedAlbums;
     }
 }
 
 -(void)filterGenre: (NSString*) selectedGenre {
     if ([selectedGenre isEqual:@"Rock"]) {
-       // _albums =
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"genre == %@", selectedGenre];
+       _albums = [_albums filteredArrayUsingPredicate:predicate];
     } else if ([selectedGenre isEqual:@"Other"]) {
-        
-    } else {
-        
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"genre != %@", selectedGenre];
+       _albums = [_albums filteredArrayUsingPredicate:predicate];
     }
 }
 
@@ -71,7 +77,9 @@
     self.albums = [NSMutableArray arrayWithContentsOfFile: self.mypath];
     self.allAlbums = [NSMutableArray arrayWithContentsOfFile: self.mypath];
     [self changeTrack:0];
-    
+    self.artistFilter = @"";
+    self.genreFilter = @"All";
+
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -97,6 +105,6 @@
         self.currentTrack = index;
         self.currRecord.text = [NSString stringWithFormat:@"Record %ld of %ld", index + 1, [_albums count] ];
     }
-    
+
 }
 @end

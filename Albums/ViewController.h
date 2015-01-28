@@ -18,6 +18,8 @@
 @property (nonatomic, retain) NSString *mypath;
 @property (nonatomic, retain) NSMutableArray* albums;
 @property (nonatomic, retain) NSMutableArray* allAlbums;
+@property NSString *artistFilter;
+@property NSString *genreFilter;
 
 - (IBAction)buttonClicked:(id)sender;
 - (IBAction)nextClicked:(id)sender;
@@ -29,4 +31,3 @@
 - (IBAction)searchClicked:(id)sender;
 
 @end
-

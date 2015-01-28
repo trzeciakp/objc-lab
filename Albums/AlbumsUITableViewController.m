@@ -16,24 +16,22 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 1; }
+    return 1;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 3;
+    return [self.unidb count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    SubtitleCell cell = [tableView  cellForRowAtIndexPath:indexPath];
-    
-    static NSString *CellIdentifier = @"UniversityCell";
-    UniversityCell *cell = (UniversityCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    cell.nameLabel.text = self.unidb[indexPath.row][@"name"];
-    cell.regionLabel.text = self.unidb[indexPath.row][@"region"];
-    cell.ratingImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%dstar", [self.unidb[indexPath.row][@"rating"] integerValue]]];
+
+    static NSString *CellIdentifier = @"SubtitleCell";
+    UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    cell.textLabel.text = self.unidb[indexPath.row][@"title"];
+    cell.detailTextLabel.text = self.unidb[indexPath.row][@"artist"];
     return cell;
 }
 @end
-
-
