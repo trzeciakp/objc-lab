@@ -22,7 +22,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [self.unidb count];
+    return [self.albums count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -30,8 +30,15 @@
 
     static NSString *CellIdentifier = @"SubtitleCell";
     UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    cell.textLabel.text = self.unidb[indexPath.row][@"title"];
-    cell.detailTextLabel.text = self.unidb[indexPath.row][@"artist"];
+    cell.textLabel.text = self.albums[indexPath.row][@"title"];
+    cell.detailTextLabel.text = self.albums[indexPath.row][@"artist"];
     return cell;
+}
+
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    _mypath = [[NSBundle mainBundle] pathForResource:@"albums" ofType:@"plist"];
+    self.albums = [NSMutableArray arrayWithContentsOfFile: self.mypath];
 }
 @end
