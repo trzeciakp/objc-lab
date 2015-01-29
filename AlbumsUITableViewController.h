@@ -11,4 +11,6 @@
 @interface AlbumsUITableViewController : UITableViewController
 
 @property (nonatomic) NSInteger rows;
+@property (nonatomic, retain) NSString *mypath;
+@property (nonatomic, retain) NSMutableArray* albums;
 @end

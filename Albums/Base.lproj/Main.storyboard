@@ -159,7 +159,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="tHY-SP-kM1" detailTextLabel="whU-LU-qzK" style="IBUITableViewCellStyleSubtitle" id="eJW-GT-BZa">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SubtitleCell" textLabel="tHY-SP-kM1" detailTextLabel="whU-LU-qzK" style="IBUITableViewCellStyleSubtitle" id="eJW-GT-BZa">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eJW-GT-BZa" id="XO5-tB-PyZ">
                                     <autoresizingMask key="autoresizingMask"/>
