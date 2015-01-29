@@ -30,5 +30,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *searchInput;
 - (IBAction)searchClicked:(id)sender;
 - (IBAction)genreFilterClicked:(id)sender;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *genreSegment;
 
 @end

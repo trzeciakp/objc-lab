@@ -40,12 +40,12 @@
 }
 
 -(IBAction)searchClicked:(id)sender {
-    artistFilter = _searchInput.text;
+    self.artistFilter = _searchInput.text;
     [self filterAlbums];
 }
 
 - (void)genreFilterClicked:(id)sender {
-    genreFilter = [genreFilterOutlet titleForSegmentAtIndex:[genreFilterOutlet selectedSegmentIndex]];
+    _genreFilter = [_genreSegment titleForSegmentAtIndex:[_genreSegment selectedSegmentIndex]];
     [self filterAlbums];
 }
 
@@ -68,10 +68,10 @@
 
 -(void)filterGenre: (NSString*) selectedGenre {
     if ([selectedGenre isEqual:@"Rock"]) {
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"genre == %@", selectedGenre];
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"genre == %@", @"rock"];
        _albums = [_albums filteredArrayUsingPredicate:predicate];
     } else if ([selectedGenre isEqual:@"Other"]) {
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"genre != %@", selectedGenre];
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"genre != %@", @"rock"];
        _albums = [_albums filteredArrayUsingPredicate:predicate];
     }
 }

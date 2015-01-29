@@ -130,6 +130,17 @@
                                     <action selector="searchClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uoI-3E-J4z"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ihm-ep-3wQ">
+                                <rect key="frame" x="127" y="465" width="234" height="29"/>
+                                <segments>
+                                    <segment title="All"/>
+                                    <segment title="Rock"/>
+                                    <segment title="Other"/>
+                                </segments>
+                                <connections>
+                                    <action selector="genreFilterClicked:" destination="BYZ-38-t0r" eventType="valueChanged" id="zI5-XQ-T20"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -140,6 +151,7 @@
                         <outlet property="currRecord" destination="Zvq-7B-m9d" id="AlK-vR-Vd9"/>
                         <outlet property="date" destination="O4w-dY-Mcd" id="HEP-kS-oIP"/>
                         <outlet property="genre" destination="lTh-hJ-QlB" id="wWa-eW-BMZ"/>
+                        <outlet property="genreSegment" destination="ihm-ep-3wQ" id="8fe-7Z-zLH"/>
                         <outlet property="next" destination="8Xo-2Y-nTQ" id="XYY-ii-QAY"/>
                         <outlet property="prev" destination="0ZT-Xs-hoM" id="tVv-2x-c0i"/>
                         <outlet property="search" destination="nVQ-Bm-usx" id="WZ4-Ib-XJg"/>
