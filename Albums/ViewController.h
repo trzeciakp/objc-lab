@@ -29,5 +29,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *search;
 @property (weak, nonatomic) IBOutlet UITextField *searchInput;
 - (IBAction)searchClicked:(id)sender;
+- (IBAction)genreFilterClicked:(id)sender;
 
 @end

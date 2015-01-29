@@ -44,6 +44,11 @@
     [self filterAlbums];
 }
 
+- (void)genreFilterClicked:(id)sender {
+    genreFilter = [genreFilterOutlet titleForSegmentAtIndex:[genreFilterOutlet selectedSegmentIndex]];
+    [self filterAlbums];
+}
+
 -(void)filterAlbums {
   _albums = _allAlbums;
   [self filterArtists:_artistFilter];
